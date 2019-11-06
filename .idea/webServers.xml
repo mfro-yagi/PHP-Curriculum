@@ -2,7 +2,7 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="fcd7d461-67de-4ce6-96a3-2820b7628291" name="test.lhost" url="http://test.lhost">
+      <webServer id="fcd7d461-67de-4ce6-96a3-2820b7628291" name="test.lhost" url="http://test.lhost/curriculum">
         <fileTransfer host="test.lhost" port="22" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
