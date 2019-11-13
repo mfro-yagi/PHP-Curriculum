@@ -1,0 +1,74 @@
+<html>
+<body>
+
+<?php
+
+function determination_isset($value){
+    if (isset($value)) {
+        echo "中身は入っています<br>";
+    } else {
+        echo "空です<br>";
+    }
+}
+
+echo 'isset<br>';
+$value = "テスト";
+determination_isset($value); //中身は入っています
+$value = "0";
+determination_isset($value); //中身は入っています
+$value = null;
+determination_isset($value); //空です
+
+echo '<br><br>';
+
+function determination_empty($value){
+    if (!empty($value)) {
+        echo "中身は入っています<br>";
+    } else {
+        echo "空です<br>";
+    }
+}
+
+echo 'empty<br>';
+$value = "テスト";
+determination_empty($value); //中身は入っています
+$value = "0";
+determination_empty($value); //空です
+$value = null;
+determination_empty($value); //空です
+
+echo '<br><br>';
+
+echo 'in_array<br>';
+$os = array("Mac", "NT", "Irix", "Linux");
+if (in_array("Irix", $os)) {
+    echo "Got Irix<br>";
+}
+if (in_array("mac", $os)) {
+    echo "Got mac<br>"; //in_arrayは大文字小文字区別
+}
+
+$a = array('1.10', 12.4, 1.13);
+if (in_array('12.4', $a, true)) {
+    echo "'12.4' found with strict check<br>";
+}
+if (in_array(1.13, $a, true)) {
+    echo "1.13 found with strict check<br>";
+}
+
+$a = array(array('p', 'h'), array('p', 'r'), 'o');
+//$aの中にarray('p','h')があるか
+if (in_array(array('p', 'h'), $a)) {
+    echo "'ph' was found<br>";
+}
+if (in_array(array('f', 'i'), $a)) {
+    echo "'fi' was found<br>";
+}
+if (in_array('o', $a)) {
+    echo "'o' was found<br>";
+}
+
+?>
+
+</body>
+</html>
