@@ -11,7 +11,13 @@ echo htmlspecialchars('<a href="#">HTMLエンティティ化する。</a>', ENT_
 echo '<a href="#">HTMLエンティティ化しない。</a>'.'<br>';
 
 //HTMLエンティティを元に戻す関数
-echo htmlspecialchars_decode('&lt;a href=&quot;#2&quot;&gt;HTMLエンティティを元に戻す。&lt;/a&gt;', ENT_QUOTES);
+echo htmlspecialchars_decode('&lt;a href=&quot;#2&quot;&gt;HTMLエンティティを元に戻す。&lt;/a&gt;', ENT_QUOTES).'<br>';
+
+//htmlspecialchars簡略化
+function h($s) {
+    return htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
+}
+echo h('<a href="#">HTMLエンティティ化する。</a>');
 
 ?>
 

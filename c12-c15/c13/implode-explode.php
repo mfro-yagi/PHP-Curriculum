@@ -45,7 +45,7 @@ print_r(explode('|', $str, 5));
 print_r(explode('|', $str, -1));
 print_r(explode('|', $str, -2));
 print_r(explode('|', $str, -3));
-echo '</pre>'
+echo '</pre>';
 
 ?>
 

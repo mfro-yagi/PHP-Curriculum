@@ -34,6 +34,13 @@ else
     <input type="text" name="name" value="">
     <input type="submit" value="送信">
 </form>
+<br><br>
+<?php
+//htmlspecialchars.phpからファイルを読み込み表示
+require_once('../c12-c15/c13/htmlspecialchars.php');
+echo '<br><br>';
+echo h('<a href="#">HTMLエンティティ化する。</a>');
+?>
 
 </body>
 </html>
