@@ -2,7 +2,7 @@
 <body>
 
 <?php
-require 'c18class3.php';
+require 'c18-3.php';
 /**
  * interface
  */

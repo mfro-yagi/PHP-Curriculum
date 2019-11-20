@@ -1,5 +1,5 @@
 <?php
-//"c18class2.php"　へ継承
+//"c18-2interface.php"　へ継承
 class Nights{
 
     //定数　class内でのみ定義可

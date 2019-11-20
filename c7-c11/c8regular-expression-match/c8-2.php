@@ -25,14 +25,14 @@ else
 
 <?php
 
-if (preg_match('/^([a-zA-Z0-9.!#$%&\'*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*)$/', $_POST["mail"]))
-    echo '「'.$_POST["mail"].'」はメールアドレスです';
+if (preg_match('/^(http|https|ftp):\/\/([A-Z0-9][A-Z0-9_-]*(?:\.[A-Z0-9][A-Z0-9_-]*)+):?(\d+)?\/?/i', $_POST["url"]))
+    echo '「'.$_POST["url"].'」はURLです';
 else
-    echo 'メールアドレスを入力'
+    echo 'URLを入力'
 
 ?>
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
-    <input type="text" name="mail" value="">
+    <input type="text" name="url" value="">
     <input type="submit" value="送信">
 </form>
 

@@ -38,7 +38,7 @@ $obj->printHello(); // Public, Protected, Private を表示
 class MyClass2 extends MyClass
 {
     // public, protected プロパティは再定義できる
-    // private はできない
+    // private は子クラスからアクセスできない
     public $public = 'Public2';
     //protected $protected = 'Protected2'; //再定義できる
 
