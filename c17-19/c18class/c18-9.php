@@ -2,12 +2,12 @@
 <body>
 
 <?php
-/**
- * 引数にクラスの型
- */
+//引数にクラスの型
 class Sample
 {
+    /** @var string */
     private $name = "";
+    /** @var int */
     private $price = 0;
     //コンストラクタ。商品名と商品価格を設定する
     public function __construct($name, $price){
@@ -15,19 +15,31 @@ class Sample
         $this->price = $price;
     }
     //商品名と価格を表示するメソッド
+
     public function printPrice(){
         print($this->name."の価格: ￥".$this->price."<br>");
     }
+
     //商品名のゲッタ
+    /**
+     * @return string
+     */
     public function getName(){
         return $this->name;
     }
+
     //商品価格のゲッタ
+    /**
+     * @return int
+     */
     public function getPrice(){
         return $this->price;
     }
 }
 
+/**
+ * @param Sample $sample
+ */
 function test(Sample $sample){
     //商品価格の税込み価格を計算し、表示
     $priceWithTax = round($sample->getPrice() * 1.1);  // round() 小数点以下の四捨五入

@@ -14,6 +14,9 @@ class Singleton
         echo "インスタンスを生成しました。" .'<br>';
     }
 
+    /**
+     * @return Singleton
+     */
     public static function getInstance()
     {
         if (!isset(self::$singleton)) {

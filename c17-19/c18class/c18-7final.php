@@ -6,31 +6,31 @@
  * final class
  */
 class H{
-    function hoge1(){
+    function hoke1(){
         echo "abc";
     }
 }
 
 final class I extends H {
-    function hoge2(){
+    function hoke2(){
         echo "def";
     }
 }
 
 class J //extends I     継承不可
 {
-    function hoge3(){
+    function hoke3(){
         echo "ghi";
     }
 }
 
 $fu = new I();
-$fu->hoge1();
-$fu->hoge2();
+$fu->hoke1();
+$fu->hoke2();
 echo ' ';
 $foo = new J();
 //$foo->hoge2();
-$foo->hoge3();
+$foo->hoke3();
 
 
 /**
