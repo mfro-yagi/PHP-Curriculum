@@ -8,9 +8,9 @@
 class Goods
 {
     //商品名プロパティ
-    private $name = "";
+    protected $name = "";
     //商品価格プロパティ
-    private $price = 0;
+    protected $price = 0;
     //コンストラクタ。商品名と商品価格を設定する
     public function __construct($name, $price){
         $this->name = $name;
