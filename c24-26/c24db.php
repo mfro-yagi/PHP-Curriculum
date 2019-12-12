@@ -276,7 +276,19 @@ FROM
         JOIN category AS C
              ON I.category = C.category
 WHERE
-        shop_name=\'新宿\';';
+        shop_name=\'新宿\';
+create table shop_b (
+                      shop_name varchar(20), item_id int(3), quantity int(5),
+                      created datetime DEFAULT NULL, modified datetime DEFAULT NULL);
+insert into shop_b
+values (\'天王寺\', 1, 400, now(), now()), (\'天王寺\', 3, 700, now(), now()), (\'天王寺\', 4, 400, now(), now()),
+       (\'梅田\', 3, 1000, now(), now()),  (\'梅田\', 5, 300, now(), now());
+select * from shop_b;
+
+
+select item_id from shop where shop_name = \'新宿\'
+UNION
+select item_id from shop_b where shop_name = \'天王寺\'';
 
     // SQL実行
     $res = $dbh->query($sql);
