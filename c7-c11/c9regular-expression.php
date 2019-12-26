@@ -3,7 +3,7 @@
 
 <p> 「YYYY-MM-DD」の形式で入力すると「DD/MM/YYYY」の形式で出力　</p>
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
-    <input type="text" name="period" value="">
+    <input type="text" name="name" value="">
     <input type="submit" value="送信">
 </form>
 <?php
@@ -11,7 +11,7 @@
 $patterns = array ('/(19|20)(\d{2})-(\d{1,2})-(\d{1,2})/',
     '/^\s*{(\w+)}\s*=/');
 $replace = array ('\3/\4/\1\2', '$\1 =');
-echo preg_replace($patterns, $replace, $_POST["period"]);
+echo preg_replace($patterns, $replace, $_POST["name"]);
 
 ?>
 
@@ -24,10 +24,17 @@ echo preg_replace($patterns, $replace, $_POST["period"]);
 </form>
 <?php
 
-$patterns = array ('/(19|20)(\d{2})-(\d{1,2})-(\d{1,2})/',
-    '/^\s*{(\w+)}\s*=/');
-$replace = array ('\3/\4/\1\2', '$\1 =');
-echo preg_replace($patterns, $replace, $_POST["period"]);
+$patterns = array ('/(19|20)(\d{2})-(\d{1,2})-(\d{1,2})/m',
+    '/^\s*{(\w+)}\s*=/m');
+/**
+ * @return array
+ */
+function replace() {
+    $replace = array ('\3/\4/\1\2', '$\1 =');
+    return $replace;
+}
+//$replace = array ('\3/\4/\1\2', '$\1 =');
+echo preg_replace_callback($patterns, replace, $_POST["period"]);
 
 ?>
 
